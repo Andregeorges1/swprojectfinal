@@ -29,7 +29,7 @@ const Login = () => {
       const response = await axios.post(
         `${backend_url}/login`,
         { ...inputValue },
-        { withCredentials: true, credentials: 'include' }
+        {  withCredentials: true, credentials: 'include'  }
       );
   
       const { status, data } = response;
@@ -41,29 +41,14 @@ const Login = () => {
   
         // Save the token in a cookie
         document.cookie = `token=${token}; path=/; samesite=None;`;
-  
+       
         // Save other user information if needed
         localStorage.setItem("userId", user._id);
         localStorage.setItem("role", user.role);
-  
-        // Redirect based on user role
-        switch (user.role) {
-          case "user":
-            navigate("/user");
-            break;
-          case "admin":
-            navigate("/admin");
-            break;
-          case "agent":
-            navigate("/agent");
-            break;
-          case "manager":
-            navigate("/manager");
-            break;
-          default:
-            // Handle other roles or unknown roles
-            break;
-        }
+        await axios.post(`${backend_url}/otp/send-otp/${email}`, {},{withCredentials: true});
+
+        navigate("/otp", {state:{email: inputValue.email}}); // Redirect to Admin.jsx
+
       } else {
         setErrorMessage("Invalid email or password");
       }
