@@ -1,9 +1,9 @@
 // User.jsx
-
+import { faBars, faPlus, faSignOutAlt, faBook, faShoePrints, faUser, faMessage,faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faPlus, faSignOutAlt, faBook, faShoePrints, faUser, faMessage } from "@fortawesome/free-solid-svg-icons";
+//import { faBars, faPlus, faSignOutAlt, faBook, faShoePrints, faUser, faMessage } from "@fortawesome/free-solid-svg-icons";
 import "../stylesheets/user.css";
 
 const UserSidebar = ({ openSidebar, setOpenSidebar }) => {
