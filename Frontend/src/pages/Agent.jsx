@@ -10,6 +10,7 @@ import {
   faComments, // Icon for Live Chat
   faHome, // Home Icon
   faSignOutAlt, // Sign Out Icon
+  faRobot
 } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -63,6 +64,9 @@ const Agent = () => {
         {/* Tickets */}
         <Link to="/agentTickets" onClick={() => setOpenSidebar(false)}>
            <FontAwesomeIcon icon={faTicket} size="lg" />
+        </Link>
+        <Link to="/createAutomated" onClick={() => { handleSignOut(); setOpenSidebar(false); }}>
+          <FontAwesomeIcon icon={faRobot} size="lg" />
         </Link>
         {/* Email */}
         <Link to="/email" onClick={() => setOpenSidebar(false)}>

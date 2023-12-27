@@ -57,9 +57,7 @@ const Admin = () => {
         <Link to="/register" onClick={() => { handleSignOut(); setOpenSidebar(false); }}>
           <FontAwesomeIcon icon={faUser} size="lg" />
         </Link>
-        <Link to="/createAutomated" onClick={() => { handleSignOut(); setOpenSidebar(false); }}>
-          <FontAwesomeIcon icon={faRobot} size="lg" />
-        </Link>
+        
         {/* Use Font Awesome icon for the "Users" link (for all users) */}
         <Link to="/users" onClick={() => setOpenSidebar(false)}>
           <FontAwesomeIcon icon={faUsers} size="lg" />
