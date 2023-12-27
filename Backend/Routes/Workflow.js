@@ -5,7 +5,7 @@ const authorizationMiddleware = require('../Middleware/authorizationMiddleware')
 
 router.post("/:ticketId", authorizationMiddleware(['agent']), workflowController.createWorkflow);
 
-router.post("/", authorizationMiddleware(['admin']), workflowController.createAutomatedWorkflow);
+router.post("/", authorizationMiddleware(['agent']), workflowController.createAutomatedWorkflow);
 
 router.get("/automatedWorkflow/:issue/:subIssue", authorizationMiddleware(['user']), workflowController.getAutomatedWorkflow);
 
