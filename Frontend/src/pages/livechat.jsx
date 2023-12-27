@@ -3,7 +3,7 @@ import axios from "axios";
 import "../stylesheets/livechat.css"; // Import the CSS file
 
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { setQuestionId } from "/Users/gergesdanial/Downloads/Project_software 2/Backend/questionState.js";
+import { setQuestionId } from "/Users/andregeorges/Documents/GitHub/swproject/Backend/questionState.js";
 const backend_url = "http://localhost:3000/api/v1";
 const LiveChat = () => {
   const [newQuestion, setNewQuestion] = useState("");
